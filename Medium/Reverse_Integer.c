@@ -1,8 +1,9 @@
 int reverse(int x){
-    int power=0, reverse=0,min=0;
-    if(x>INT_MAX/10||x<INT_MIN/10){
+    if(x==-2147483648){
         return 0;
     }
+    int power=0,min=0,res;
+    long reverse=0;
     if(x<0){
         min=-x;
     }
@@ -46,11 +47,15 @@ int reverse(int x){
         }
         j--;
     }
-    
-    
     free(solver);
-    if(x<0){
-        return -reverse;
+    if(reverse>INT_MAX){
+        return 0;
     }
-    return reverse;
+    else{
+        res=(int)reverse;
+    }
+    if(x<0){
+        return -res;
+    }
+    return res;
 }
