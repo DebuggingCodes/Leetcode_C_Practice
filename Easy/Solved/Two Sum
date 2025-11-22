@@ -1,15 +1,12 @@
 int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
-    if(numsSize>10000||numsSize<2||target>1000000000||target<-1000000000){
-        *returnSize=0;
-        return NULL;
-    }
+    
     int i,j;
     
     int* arr=(int*) malloc(2 * sizeof(int));
     for(i=0;i<numsSize;i++){
         for(j=i+1;j<numsSize;j++){
 
-            if(nums[j]<=1000000000&&nums[j]>=-1000000000&&nums[i]<=1000000000&&nums[i]>=-1000000000&&nums[i]+nums[j]==target){
+            if(nums[i]+nums[j]==target){
             
             arr[0]=i;
             arr[1]=j;
