@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include<stdbool.h>
+bool isPalindrome(int x) {
+    if (x<0){
+        return 0;
+    }
+    return 1;
+}
+int main() {
+    int x =121,power=0;
+    int given=x, answer=0;
+    // while(given>0){
+    //     given/=10;
+    //     power++;
+    // }printf("%d\n",power);
+    // for(int i=0;i<power;i++){
+    //     int divisor=1;
+    //     for(int j=0;j<power;j++){
+    //         divisor*=10;
+    //     }
+    //     answer=answer+(x/divisor);
+    // }
+    int i=0,rem;
+    while(given>0){
+        int divisor=1,divi;
+        for(int j=0;j<i;j++){
+            divisor*=10;
+            divi=10;
+        }
+        printf("Given = %d \t ", given);
+        given/=divi;
+        printf("Given = %d \t ", given);
+        rem = given%10;
+        answer=answer+ (rem*divisor);
+        i++;
+        printf("%d\t%d %d\n",rem, divisor,answer);
+    }
+    // printf("%d\n",answer);
+    
+    return 0;
+}
