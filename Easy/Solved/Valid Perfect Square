@@ -1,0 +1,16 @@
+bool isPerfectSquare(int num) {
+    int x=0;
+    while(x*x<INT_MAX){
+        if(num==x*x){
+            return true;
+        }
+        if(num<x*x){
+            return false;
+        }
+        x++;
+        if(x==46341){
+            return 0;
+        }
+    }
+    return false;
+}
