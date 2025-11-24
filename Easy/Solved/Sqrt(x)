@@ -1,0 +1,18 @@
+int mySqrt(int x) {
+    int square[46340];
+    int num=2;
+    square[0]=1;
+    for(int i=1;i<46340;i++){
+        square[i]=(i+1)*(i+1);
+        num++;
+    }
+    
+    int j=0;
+    if(x>=square[46339]){
+        return 46340;
+    }
+    while(x>=square[j]){
+        j++;
+    }
+    return j;
+}
