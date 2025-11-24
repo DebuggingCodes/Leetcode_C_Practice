@@ -1,0 +1,17 @@
+double myPow(double x, int n) {
+    double prod=1;
+    if(n==0||x==1){
+        return 1;
+    }
+    if(n>0){
+        for(int i=0;i<n;i++){
+            prod=prod*x;
+        }
+    }
+    if(n<0){
+        for(int i=0;i<n;i++){
+            prod=prod/x;
+        }
+    }
+    return prod;
+}
