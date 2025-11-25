@@ -1,0 +1,27 @@
+bool isPalindrome(char* s) {
+    int i=0,j=0,k=0;
+    while(s[i]!='\0'){
+        if(s[i]>=65&&s[i]<=90){
+            s[i]+=32;
+        }
+        i++;
+    }
+    while(s[j]!='\0'){
+        while((s[j]<97||s[j]>122)&&(s[j]>57||s[j]<48)){
+            j++;
+            if(i==j){
+                goto end;
+            }
+        }
+        s[k]=s[j];
+        k++,j++;
+    }
+    s[k]='\0';
+    end:
+    for(int m=0;m<k/2;m++){
+        if(s[m]!=s[k-1-m]){
+            return 0;
+        }
+    }
+    return 1;
+}
