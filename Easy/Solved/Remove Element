@@ -1,0 +1,23 @@
+int removeElement(int* nums, int numsSize, int val) {
+    if(numsSize==0){
+        return 0;
+    }
+    int k=0,i=0,res[numsSize];
+    for(i =0;i<numsSize;i++){
+        while(nums[i]==val){
+            i++;
+            if(i==numsSize){
+                for(int m=0;m<k;m++){
+                    nums[m]=res[m];
+                }
+                return k;
+            }
+        }
+        res[k]=nums[i];
+        k++;
+    }
+    for(int m=0;m<k;m++){
+        nums[m]=res[m];
+    }
+    return k;
+}
