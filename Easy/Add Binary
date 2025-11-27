@@ -1,0 +1,54 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<string.h>
+#include <stdlib.h>
+char addition(char a, char b){
+    if(a=='0'&&b=='1'){
+        char s='1';
+        return s;
+    }
+    if(a=='1'&&b=='0'){
+        char s='1';
+        return s;
+    }
+    if(a=='0'&&b=='0'){
+        char s='0';
+        return s;
+    }
+}
+void reverse(char* a,int n){
+    for(int i =0; i<n/2;i++){
+        char temp;
+        temp=a[i];
+        a[i]=a[n-i-1];
+        a[n-i-1]=temp;
+    }
+}
+char* addBinary(char* a, char* b) {
+    int n1=strlen(a);
+    int n2=strlen(b);
+    reverse(a,n1);
+    reverse(b,n2);
+    char* s=(char*)malloc((n1+n2)*sizeof(char));
+    int j=0;
+    for(int i=0;i<n1&&i<n2;i++,j++){
+        if(a[i]=='1'&&b[i]=='1'){
+            s[j]='0';
+            j++;
+            s[j]='1';
+            continue;
+        }
+        s[j]=addition(a[i],b[i]);
+    }
+    s[j]='\0';
+    reverse(s,j);
+    return s;
+}
+int main() {
+    char a[]="11";
+    char b[]="1";
+    
+    printf("%s",addBinary(a,b));
+
+    return 0;
+}
