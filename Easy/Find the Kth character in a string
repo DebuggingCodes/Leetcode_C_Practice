@@ -1,0 +1,26 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+char* adder(char* orgiStr,int n){
+    char* str=(char*)malloc(n*sizeof(char));
+    for(int i=0;i<n;i++){
+        str[i]=orgiStr[i];
+    }
+    for(int i=0;i<n;i++){
+        str[i]+=1;
+    }
+    return str;
+}
+// char kthCharacter(int k) {
+    
+// }
+int main() {
+    char string[]="Hal";
+    // char res= kthCharacter(5);
+    // printf("%c",res);
+    
+    char* let=adder(string,3);
+    printf("%s",let);
+
+    return 0;
+}
