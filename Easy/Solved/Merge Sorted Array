@@ -1,0 +1,18 @@
+void sortAsc(int* nums,int numsSize){
+    for(int i =0;i<numsSize;i++){
+        for(int j=i+1;j<numsSize;j++){
+            if(nums[i]>nums[j]){
+                int temp=nums[i];
+                nums[i]=nums[j];
+                nums[j]=temp;
+            }
+        }
+    }
+}
+void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n) {
+    int i =0;
+    for(i;i<n;i++,m++){
+        nums1[m]=nums2[i];
+    }  
+    sortAsc(nums1,nums1Size);
+}
