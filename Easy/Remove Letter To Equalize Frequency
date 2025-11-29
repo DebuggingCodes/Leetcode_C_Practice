@@ -1,0 +1,56 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+void sortLetters(char* word,int length){
+    for(int i =0;i<length;i++){
+        for(int j=i+1;j<length;j++){
+            if(word[i]>word[j]){
+                char temp=word[i];
+                word[i]=word[j];
+                word[j]=temp;
+            }
+        }
+    }
+}
+int* charcount(char* word,int length){
+    int* count=(int*)malloc(length*sizeof(int));
+    int i=0,j=0;
+    for(int m=0;m<length;m++){
+        while(word[i]==word[j]){
+            i++;
+        }
+        count[m]=i-j;
+        j=i;
+    }
+    return count;
+}
+// int* frequecy(char* word,int len){
+//     int* freq=(int*)malloc(len*sizeof(int));
+    
+//     return freq;
+// }
+bool equalFrequency(char* word) {
+    
+}
+int main() {
+    char word[]="aacb";
+    int alpha[26]={0};
+    for(int i=0;i<4;i++){
+        printf("%c ",word[i]);
+    }printf("\n");
+    sortLetters(word, 4);
+    for(int i=0;i<4;i++){
+        printf("%c ",word[i]);
+    }
+    int* counter= charcount(word,4);
+    for(int i=0;i<4;i++){
+        printf("%d ",counter[i]);
+    }
+    // char letter[]={"abcdefghijklmnopqrstuvwxyz"};
+    // alphaToNum(word,alpha);
+    // for(int i=0;i<26;i++){
+    //     printf("%c = %d",word[i],alpha[i]);
+    // }
+    return 0;
+}
