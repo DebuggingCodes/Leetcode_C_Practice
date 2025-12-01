@@ -1,0 +1,27 @@
+int maxProduct(int* arr, int numsSize) {
+    int max=*arr;
+    int i;
+    for(i=1;i<numsSize;i++){
+        if(max<arr[i]){
+            max=arr[i];
+        }
+    }
+    i=0;
+    while(arr[i]!=max){
+        i++;
+    }
+    int max2=arr[0];
+    if(max==arr[0]){
+        max2=arr[1];
+    }
+    for(int j=1;j<numsSize;j++){
+        if(j==i){
+            continue;
+        }
+        if(max2<arr[j]){
+            max2=arr[j];
+        }
+    }
+    int product = (max-1)*(max2-1);
+    return product;
+}
