@@ -1,0 +1,30 @@
+#include<stdio.h>
+void sortArr(int* nums, int numsSize){
+    for(int i=0;i<numsSize;i++){
+        for(int j=i+1;j<numsSize;j++){
+            if(nums[i]>nums[j]){
+                int temp=nums[i];
+                nums[i]=nums[j];
+                nums[j]=temp;
+            }
+        }
+    }
+}
+int removeDuplicates(int* nums, int numsSize) {
+    sortArr(nums,numsSize);
+    int j=0;
+    for(int i=0;i<numsSize;i++){
+        if(nums[i]!=nums[j]){
+            nums[i]=nums[j];
+            j++;
+        }
+    }
+    return j;
+}
+int main(){
+    int nums[]={1,1,2};
+    int numsSize=3;
+    sortArr(nums,numsSize);
+    printf("%d",removeDuplicates(nums,numsSize));
+    return 0;
+}
